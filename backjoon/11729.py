@@ -1,4 +1,4 @@
-# 하노이 탑 이동 순서
+# 하노이 탑 이동 순서 (실1)
 # https://www.acmicpc.net/problem/11729
 
 # 알고리즘의 벽

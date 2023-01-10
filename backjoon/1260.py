@@ -1,4 +1,4 @@
-# DFS와 BFS
+# DFS와 BFS(실2)
 # https://www.acmicpc.net/problem/1260
 
 '''
