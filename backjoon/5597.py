@@ -17,7 +17,7 @@ for _ in range(28):
     a.remove(n)
     # print(n, a)
 print(*a, sep='\n')
-print(a, sep='\n')
+# print(a, sep='\n')
 
 
 # =========== 참조 =============
