@@ -1,4 +1,4 @@
-# 참외밭 (실3)
+# 참외밭 (실2)
 # https://www.acmicpc.net/problem/2477
 
 
