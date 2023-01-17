@@ -2,6 +2,36 @@
 # https://www.acmicpc.net/problem/2477
 
 '''
+for i in range(0, 4) : 0, 1, 2, 3
+for i in range(3, -1, -1) : 3, 2, 1, 0
+for i in reversed(range(4)): 3, 2, 1, 0
+
+---------
+
+# 넓이를 이용해 푸는 방법
+# 넓이를 모두 이용해서 곱하면 사각형이 6개가 나온다
+# 와.. 이런 접근을...?
+
+n = int(input())
+lens = []
+for i in range(6):
+    lens.append(int(input().split()[1]))
+lens.append(lens[0])
+
+total, max_area = 0, 0
+for i in range(6):
+    total += lens[i] * lens[i+1]
+    if max_area < lens[i] * lens[i+1]:
+        max_area = lens[i] * lens[i+1]
+
+print(n * (total - 2 * max_area))
+
+
+
+
+
+
+
 
 
 
@@ -9,7 +39,6 @@
 '''
 
 # ========= 문제 풀이 ============
-
 
 
 import sys
@@ -36,23 +65,6 @@ for i in range(6):
 #     if x_list.count(i) == 1:
 #         # print(i)
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # x_list = []
@@ -86,3 +98,61 @@ for i in range(6):
 
 
 # 리스트에 중복되는 값이 있을때 다중 index 값 추출
+
+
+
+
+'''
+반례 확인하기
+
+7
+4 50
+2 160
+3 30
+1 60
+3 20
+1 100
+
+7
+2 160
+3 30
+1 60
+3 20
+1 100
+4 50
+
+7
+3 30
+1 60
+3 20
+1 100
+4 50
+2 160
+
+7
+1 60
+3 20
+1 100
+4 50
+2 160
+3 30
+
+7
+3 20
+1 100
+4 50
+2 160
+3 30
+1 60
+
+7
+1 100
+4 50
+2 160
+3 30
+1 60
+3 20
+
+
+
+'''
