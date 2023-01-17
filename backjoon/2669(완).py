@@ -5,14 +5,10 @@
 
 # ========== 문제풀이 =========
 
-
-full = [[0] * 100 for i in range(100)]
-
-# print(full)
-
-
 import sys
 input = sys.stdin.readline
+
+full = [[0] * 100 for i in range(100)]
 
 result = 0
 
