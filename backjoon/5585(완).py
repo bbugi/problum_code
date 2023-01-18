@@ -1,6 +1,8 @@
 # 거스름돈 (브2)
 # https://www.acmicpc.net/problem/5585
 
+# 그리디 알고리즘
+
 # ===== 문제 풀이 =====
 
 import sys
