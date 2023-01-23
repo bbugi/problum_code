@@ -2,63 +2,85 @@
 # https://www.acmicpc.net/problem/2477
 
 '''
-for i in range(0, 4) : 0, 1, 2, 3
-for i in range(3, -1, -1) : 3, 2, 1, 0
-for i in reversed(range(4)): 3, 2, 1, 0
-
----------
-
-# 넓이를 이용해 푸는 방법
-# 넓이를 모두 이용해서 곱하면 사각형이 6개가 나온다
-# 와.. 이런 접근을...?
-
-n = int(input())
-lens = []
-for i in range(6):
-    lens.append(int(input().split()[1]))
-lens.append(lens[0])
-
-total, max_area = 0, 0
-for i in range(6):
-    total += lens[i] * lens[i+1]
-    if max_area < lens[i] * lens[i+1]:
-        max_area = lens[i] * lens[i+1]
-
-print(n * (total - 2 * max_area))
-
-
-
-
-
-
-
-
-
 
 
 '''
 
+# ===== 문제 풀이 ============
+k = int(input())
+
+s_list = []
+for i in range(6):
+    a = list(map(int, input().split()))
+    s_list.append(a)
+    
+# print(s_list)
+    
+for i in range(6):
+    if s_list.count(s_list[i][0]) == 2:
+        print(i)
+
+
+
+
+
+
+
+
+
+
+# ======= 지섭오빠 풀이 ============
+# 넓이를 이용해 푸는 방법
+# 넓이를 모두 이용해서 곱하면 사각형이 6개가 나온다
+# 와.. 이런 접근을...?
+
+# n = int(input())
+# lens = []
+# for i in range(6):
+#     lens.append(int(input().split()[1]))
+# lens.append(lens[0])
+
+# total, max_area = 0, 0
+# for i in range(6):
+#     total += lens[i] * lens[i+1]
+#     if max_area < lens[i] * lens[i+1]:
+#         max_area = lens[i] * lens[i+1]
+
+# print(n * (total - 2 * max_area))
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ========= 문제 풀이 ============
 
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-n = int(input())
+# n = int(input())
 
-max_h = 0
-max_v = 0
-max_h_index = 0
-max_v_index = 0
+# max_h = 0
+# max_v = 0
+# max_h_index = 0
+# max_v_index = 0
 
-x_list = []
-for i in range(6):
-    temp = list(map(int, input().split()))
-    x_list.append(temp)
-print(x_list)
+# x_list = []
+# for i in range(6):
+#     temp = list(map(int, input().split()))
+#     x_list.append(temp)
+# print(x_list)
 
-for i in range(6):
-    if x_list[i][1]
+# for i in range(6):
+#     if x_list[i][1]
 
 
 # for i in range(1, 5):

@@ -224,4 +224,12 @@ if문에 왜 안들어오나 했는데 개행문자까지 포함되서 못찾은
 # sentences = input().split()
 # print(len(sentences))
 
+# ===== 2742 (브4) 기찍 N ==================
+# n = int(input())
+
+# for i in range(n, 0, -1):
+#     print(i)
+
+
+
 
