@@ -6,6 +6,104 @@
 
 # ====== 첫번째 풀이 ===========
 
+import sys
+input = sys.stdin.readline
+
+board = []
+speak = []
+for i in range(5):
+    board.extend(list(map(int, input().split())))
+for i in range(5):
+    speak.extend(list(map(int, input().split())))
+# print(board)
+# print(speak)
+
+
+for i in speak:
+    print(i)
+    for j in range(25):
+        if i == board[j]:
+            board[j] = 0
+            print(board)
+
+            if board[0:5].count(0) == 5:
+                print('yes')
+            elif board[5:10].count(0) == 5:
+                print('non')
+            elif board[10:15].count(0) == 5:
+                print('ww')
+            elif board[15:20].count(0) == 5:
+                print('zzzzz')
+            elif board[20:].count(0) == 5:
+                print('nonon')
+
+
+
+
+
+
+# def garo_check(board):
+#     bingo = 0
+#     for i in range(5):
+#         if sum(board[i]) == 0:
+#             bingo += 1
+#     return bingo
+
+# def sero_check(board):
+#     bingo = 0
+#     for i in range(5):
+#         for j in range(5):
+#             board_sero = board[j][i]
+#             if sum(board_sero[i]) == 0:
+#                 bingo += 1
+#     return bingo
+
+# def left_check(board):
+#     bingo = 0
+#     for i in range(5):
+#         if sum(board[i][i]) == 0:
+#             bingo += 1
+#     return bingo
+
+# def right_check(board):
+#     bingo = 0
+#     for i in range(5):
+#         for j in range(5):
+#             if i + j == 4:
+#                 if sum(board[i][j]) == 0:
+#                     bingo += 1
+#     return bingo
+# count = 0
+# chk_num = []
+# for i in speak:
+#     count += 1
+#     for x in range(5):
+#         for y in range(5):
+#             if board[x][y] == i:
+#                 board[x][y] = 0
+                # print(board)
+                # print(count)
+
+
+
+# chk_num.append(garo_check(board))
+                # print(sero_check(board))
+                # print(left_check(board))
+                # print(right_check(board))
+
+
+# print(chk_num)
+
+
+
+
+
+
+
+
+
+# ========== 조합이 안돼.... =============
+
 # import sys
 # input = sys.stdin.readline
 
@@ -18,166 +116,125 @@
 
 
 # cnt = 0
+# count_bingo = 0
+# board_col = [[99] * 5 for i in range(5)]
+# bingo_left = []
+# bingo_right = []
+
+
+# # 함수를 만들어서 정리해보자
+# def bingo_row(board):
+    
+    
+    
+#     for x in range(5):
+#         for y in range(5):
+#             board_col[x][y] = board[y][x]
+
+
+
+
+
 # for i in range(25):
+#     cnt += 1
+#     count_bingo = 0
 #     for x in range(5):
 #         for y in range(5):
 #             if bingo_nums[i] == board[x][y]:
 #                 board[x][y] = 0
-#                 cnt += 1
-
-     
-# print(cnt)
-
-
-#  구현 시뮬
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ========== 조합이 안돼.... =============
-
-import sys
-input = sys.stdin.readline
-
-board = [list(map(int, input().split())) for _ in range(5)]
-
-bingo_nums = []
-for _ in range(5):
-    num = list(map(int, input().split()))
-    bingo_nums.extend(num) 
-
-
-cnt = 0
-count_bingo = 0
-board_col = [[99] * 5 for i in range(5)]
-bingo_left = []
-bingo_right = []
-
-
-# 함수를 만들어서 정리해보자
-def bingo_row(board):
-    
-    
-    
-    for x in range(5):
-        for y in range(5):
-            board_col[x][y] = board[y][x]
-
-
-
-
-
-for i in range(25):
-    cnt += 1
-    count_bingo = 0
-    for x in range(5):
-        for y in range(5):
-            if bingo_nums[i] == board[x][y]:
-                board[x][y] = 0
                 
 
                         
-                for board_row in board: # 가로 빙고 성공했을 때
-                    # print(board_row)
-                    if board_row.count(0) == 5:
-                        count_bingo += 1   
+#                 for board_row in board: # 가로 빙고 성공했을 때
+#                     # print(board_row)
+#                     if board_row.count(0) == 5:
+#                         count_bingo += 1   
 
-                for col in board_col:
-                    # print(col)
-                    if col.count(0) == 5:
-                        count_bingo += 1 
+#                 for col in board_col:
+#                     # print(col)
+#                     if col.count(0) == 5:
+#                         count_bingo += 1 
 
-                for x in range(5):   
-                    for y in range(5):         
-                        if  x + y == 4:
-                            bingo_right.append(board[x][y])
-                            if bingo_right.count(0) == 5:
-                                count_bingo += 1
-                        if x == y:
-                            bingo_left.append(board[x][y])
-                            if bingo_left.count(0) == 5:
-                                count_bingo += 1
+#                 for x in range(5):   
+#                     for y in range(5):         
+#                         if  x + y == 4:
+#                             bingo_right.append(board[x][y])
+#                             if bingo_right.count(0) == 5:
+#                                 count_bingo += 1
+#                         if x == y:
+#                             bingo_left.append(board[x][y])
+#                             if bingo_left.count(0) == 5:
+#                                 count_bingo += 1
      
-if count_bingo >= 3:
-    print(cnt)
+# if count_bingo >= 3:
+#     print(cnt)
 
 
 # ============ 현우 코드 =============
 
 # coding = utf-8
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
-bn = 5
-bingo = list(list(map(int,input().split())) for _ in range(bn))
-call = list(list(map(int,input().split())) for _ in range(bn))
-visited = list(list(False for _ in range(bn)) for _ in range(bn))
+# bn = 5
+# bingo = list(list(map(int,input().split())) for _ in range(bn))
+# call = list(list(map(int,input().split())) for _ in range(bn))
+# visited = list(list(False for _ in range(bn)) for _ in range(bn))
 
-def printboard(board) :
-    for row in board :
-        print(row)
+# def printboard(board) :
+#     for row in board :
+#         print(row)
 
 
-def erasenum(n, bingo, visited) :
-    for i in range(bn) :
-        for j in range(bn) :
-            if bingo[i][j] == n :
-                visited[i][j] = True
-                return
+# def erasenum(n, bingo, visited) :
+#     for i in range(bn) :
+#         for j in range(bn) :
+#             if bingo[i][j] == n :
+#                 visited[i][j] = True
+#                 return
 
-def checkbingo(visited) :
-    ch = 0
-    # 가로 check
-    for row in visited :
-        if row.count(True) == bn :
-            ch += 1
-    # 세로 check
-    for i in range(bn) :
-        tmp = 0
-        for j in range(bn) :
-            if visited[j][i] == True :
-                tmp += 1
-        if tmp == bn :
-            ch += 1
-    # 좌상 우하 대각선 check
-    tmp = 0
-    for i in range(bn) :
-        if visited[i][i] == True :
-            tmp += 1
-    if tmp == bn :
-        ch += 1
-    # 우상 좌하 대각선 check
-    tmp = 0
-    for i in range(bn):
-        if visited[i][-i-1] == True:
-            tmp += 1
-    if tmp == bn:
-        ch += 1
+# def checkbingo(visited) :
+#     ch = 0
+#     # 가로 check
+#     for row in visited :
+#         if row.count(True) == bn :
+#             ch += 1
+#     # 세로 check
+#     for i in range(bn) :
+#         tmp = 0
+#         for j in range(bn) :
+#             if visited[j][i] == True :
+#                 tmp += 1
+#         if tmp == bn :
+#             ch += 1
+#     # 좌상 우하 대각선 check
+#     tmp = 0
+#     for i in range(bn) :
+#         if visited[i][i] == True :
+#             tmp += 1
+#     if tmp == bn :
+#         ch += 1
+#     # 우상 좌하 대각선 check
+#     tmp = 0
+#     for i in range(bn):
+#         if visited[i][-i-1] == True:
+#             tmp += 1
+#     if tmp == bn:
+#         ch += 1
 
-    return ch
+#     return ch
 
-def sol() :
-    res = 0
-    for row in call :
-        for num in row :
-            erasenum(num, bingo, visited)
-            res += 1
-            if checkbingo(visited) >= 3 :
-                return res
+# def sol() :
+#     res = 0
+#     for row in call :
+#         for num in row :
+#             erasenum(num, bingo, visited)
+#             res += 1
+#             if checkbingo(visited) >= 3 :
+#                 return res
 
-print(sol())
+# print(sol())
 
 
 
@@ -227,30 +284,7 @@ print(sol())
         
 # for 
 
-                        
-
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 # ============= 문제 풀이 과정 ===========
 # import sys
 # input = sys.stdin.readline
