@@ -329,3 +329,32 @@ for i in range(len(A)):
 
 print(min(mini))
 
+
+
+# ===== 현우 풀이 =====
+
+from collections import deque
+import copy
+import sys
+import itertools
+
+n = int(input())
+arr = [list(map(int, input().split())) for _ in range(n)]
+ls = []
+for i in range(n) :
+    ls.append(i)
+choice=list(itertools.combinations(ls,int(n/2)))
+
+minval = 100
+
+for i in range(int(len(choice)/2)) :
+    tmp = list(itertools.permutations(choice[i],2))
+    ver = list(itertools.permutations(choice[-i-1],2))
+    tmpval, verval = 0, 0
+    for j in range(len(tmp)) :
+        tmpval += arr[tmp[j][0]][tmp[j][1]]
+        verval += arr[ver[j][0]][ver[j][1]]
+    if minval > abs(tmpval-verval) :
+        minval = abs(tmpval-verval)   
+
+print(minval)
