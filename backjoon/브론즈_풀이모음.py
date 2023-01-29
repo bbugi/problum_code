@@ -1,42 +1,5 @@
-# ===== 2338 (브5) 긴자리 계산 ==================
-# a = int(input())
-# b = int(input())
-
-# def math_ab(a, b):
-#     return (a+b, a-b, a*b)
-
-# print(*math_ab(a,b), sep='\n')
 
 
-
-
-# ===== 10757 (브5) 큰수 A+B ==================
-# import sys
-# input = sys.stdin.readline
-
-# a, b = map(int, input().split())
-# print(a+b)
-
-# import sys
-
-# a, b = map(int, sys.stdin.readline().split())
-# print(a+b)
-
-
-# ===== 2420 (브5) 사파리월드 ==================
-
-# import sys
-# a, b = map(int, sys.stdin.readline().split())
-# print(abs(a-b))
-
-
-# ===== 2475 (브5) 검증수 ==================
-
-# import sys
-# nums = sys.stdin.readline().split()
-# for i in range(len(nums)):
-#     nums[i] = int(nums[i])**2
-# print(sum(nums) % 10)
 
 
 # ===== 2741 (브5) N 찍기 ==================
@@ -53,41 +16,9 @@
 
 
 
-# ===== 2754 (브5) 학점계산 ==================
-'''
-sys로 받을때 개행문자 빠졌는지 확인 잘 할것
-if문에 왜 안들어오나 했는데 개행문자까지 포함되서 못찾은것
-'''
 
-# import sys
-# input = sys.stdin.readline
-
-# score_num = [4.3, 4.0, 3.7, 
-#              3.3, 3.0, 2.7, 
-#              2.3, 2.0, 1.7, 
-#              1.3, 1.0, 0.7,
-#              0.0]
-
-# score = ['A+', 'A0', 'A-', 
-#          'B+', 'B0', 'B-',  
-#          'C+', 'C0', 'C-',  
-#          'D+', 'D0', 'D-', 
-#          'F']
-
-# s_input = input().rstrip()
-
-# for idx in range(len(score)):
-#     if s_input == score[idx]:
-#         print(score_num[idx])
         
         
-# ===== 9086 (브5) 문자열 ==================
-# import sys
-# input = sys.stdin.readline
-
-# for _ in range(int(input().rstrip())):
-#     word = input().rstrip()
-#     print(word[0], word[-1], sep='')
 
 
 # ===== 11718 (브5) 그대로 출력하기 ==================

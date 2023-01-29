@@ -3,8 +3,8 @@
 
 '''
 그래프 이론, 그래프 탐색
-너비 우선 탐색
-깊이 우선 탐색
+너비 우선 탐색 (bfs) - 큐
+깊이 우선 탐색 (dfs) - 스택
 
 '''
 
@@ -37,6 +37,4 @@ for i in range(1, n+1):
         
 print(result)
 
-# for i in range(n):
-#     u, v = map(int, input().split())
     

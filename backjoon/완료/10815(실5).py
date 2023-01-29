@@ -1,4 +1,4 @@
-# 숫자 카드
+# 숫자 카드 (실5)
 # https://www.acmicpc.net/problem/10815
 
 
