@@ -16,30 +16,81 @@ edge도 정보를 담으면 돼요
 import sys
 input = sys.stdin.readline
 
-# dfs : 스택(리스트)
-n, m, k = map(int, input().split())
+# 깊이 우선 탐색(DFS) 로 풀어보기
+# DFS : 스택 사용 , 스택에 담는 순서가 중요, 방문 순서대로 스택에 담는다. 스택은 list로 표현 ( 후입 선출 ), 재귀로 사용 가능??
 
-graph = [[] for i in range(n+1)]
-visited = [False] * (n+1)
-result = 0
 
-for i in range(m):
-    u, v = map(int, input().split())
-    graph[u].append(v) # 1과 연결된 숫자를 해당 인덱스 위치에 숫자를 더해주는 것
-    graph[v].append(u)
-
-# print(graph)
-# print(visited)
-
-def dfs(v):
-    visited[v] = True
-    for i in graph[v]:
-        if not visited[i]:
+def dfs(start):
+    visited[start] = 1
+    route.append(start)
+    for i in arr[start]:
+        if visited[i] == 0:
             dfs(i)
+
+
+coms = int(input())
+networks = int(input())
+
+visited = [0] * coms
+print(visited)
+
+
+
+# route = []
+# arr = []
+
+# dfs(1)
+# print(route)
+
+
+# visited[1] = 1
+# route.append(1)
+# for i in arr[1]:
+#     if visited[1] == 0:
+#         dfs(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # dfs : 스택(리스트)
+# n, m, k = map(int, input().split())
+
+# graph = [[] for i in range(n+1)]
+# visited = [False] * (n+1)
+# result = 0
+
+# for i in range(m):
+#     u, v = map(int, input().split())
+#     graph[u].append(v) # 1과 연결된 숫자를 해당 인덱스 위치에 숫자를 더해주는 것
+#     graph[v].append(u)
+
+# # print(graph)
+# # print(visited)
+
+# def dfs(v):
+#     visited[v] = True
+#     for i in graph[v]:
+#         if not visited[i]:
+#             dfs(i)
             
-for i in range(1, n+1):
-    if not visited[i]:
-        dfs(i)
+# for i in range(1, n+1):
+#     if not visited[i]:
+#         dfs(i)
         
 
         
