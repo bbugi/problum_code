@@ -36,8 +36,23 @@ n, k = map(int, input().split())
 print(bino_coef_factorial(n, k))
 
 
+# ================
 
-# 2. 동적 계획법 ( 이항 계수 성질 이용하기 ) : 기억하며 풀기
+# 2. 조합의 수라고 하는데 combination도 가능한지? - 통과 됨
+# from itertools import combinations
+
+# n, k = map(int, input().split())
+
+# item = [i for i in range(n)]
+# # print(item)
+
+# print(len(list(combinations(item, k))))
+
+
+
+# ========================
+
+# 3. 동적 계획법 ( 이항 계수 성질 이용하기 ) : 기억하며 풀기
 # 어떻게 구현되는지 모르겠는걸..?
 
 # def bino_coef(n, k):
@@ -47,14 +62,3 @@ print(bino_coef_factorial(n, k))
 
 # n, k = map(int, input().split())
 # print(bino_coef(n, k))
-
-
-# 3. 조합의 수라고 하는데 combination도 가능한지? - 통과 됨
-# from itertools import combinations
-
-# n, k = map(int, input().split())
-
-# item = [i for i in range(n)]
-# # print(item)
-
-# print(len(list(combinations(item, k))))
