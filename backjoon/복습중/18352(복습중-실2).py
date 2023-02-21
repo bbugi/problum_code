@@ -72,3 +72,55 @@ else:
             # ans.append(i)
 
     # print(*sorted(ans), sep='\n')
+
+
+
+
+# ===== 데이크스트라 사용 ======
+# dijkstra 알고리즘
+# 힙 사용하기
+# 파이썬에서는 최소 힙으로 구현됨 
+
+
+import heapq # 힙성질을 지닌 리스트를 생성할 수 있음
+import sys
+input = sys.stdin.readline
+INF = int(1e9) # 무한(10억) 
+# 최단거리를 distance에 넣을때 무조건 기존에 들어있는 수보다는 작아야 하므로
+# 무한의 숫자로 넣은 것
+
+n, m, k, x = map(int, input().split())
+graph = [[] for _ in range(n+1)]
+distance = [INF]*(n+1)
+
+# 그래프 그리기
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+
+def dijkstra(start):
+    q = [] # 힙
+    heapq.heappush(q, (0, start))
+    distance[start] = 0
+    while q:
+        # dist가 가장 짧은 노드를 꺼냄
+        dist, now = heapq.heappop(q)
+        # 방문 정보 확인
+        if dist > distance[now]:
+            continue
+        # 현재 노드와 인접 노드 확인
+        for i in graph[now]:
+            cost = dist + 1 # 모든 거리가 1이므로
+            # 현재 노드를 거쳐 다른 노드로 이동하는 거리가 더 짧을 경우
+            if cost < distance[i]:
+                distance[i] = cost
+                # 힙에 (거리, 노드)를 넣음
+                heapq.heappush(q, (cost, i))
+dijkstra(x)
+ck = False
+for i in range(1, n+1):
+    if distance[i] == k:
+        print(i)
+        ck = True
+if not ck:
+    print(-1)

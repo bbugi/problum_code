@@ -47,6 +47,9 @@ if __name__ == '__main__':
         return n, m, board
 
     n, m, board = getdata()
+    # 방문해야 할 곳(리스트), 방문한 곳 (딕셔너리로 줌)
+    # 딕셔너리의 키 값을 (0,0)으로 미로의 위치 좌표를 
+    # 
     need_visited, visited = deque(), dict()
     need_visited.append([0,0])
     visited[0,0] = 1
