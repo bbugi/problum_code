@@ -14,35 +14,29 @@ N, K가 주어졌을 때, K번째 지우는 수를 구하는 프로그램을 작
 
 '''
 
-def clear_num(pop_num, cnt):
-    for number in list(num_deque):
-        # print('for문의 number:',number)
-        if number % pop_num == 0:
-            # print('if문의 number:' ,number)
-            clr_num = number
-            num_deque.remove(clr_num)
-            cnt += 1
-            # print(clr_num)
-            return cnt, clr_num
-        else:
-            pass
-    
-
-
 from collections import deque
 
 n, k = map(int, input().split())
 
 num_deque = deque(i for i in range(2, n+1))
+clr_list = []
 
-# print(num)
-cnt = 1
-while cnt <= k:
+while True:
     pop_num = num_deque.popleft()
-    print(cnt, ":", pop_num)
-    cnt, clr_num = clear_num(pop_num, cnt)
-    print(cnt, ":", clr_num)
-    cnt += 1
+    clr_list.append(pop_num)
+    
+    for next_num in list(num_deque):
+        if next_num % pop_num == 0:
+            clr_list.append(next_num)
+            num_deque.remove(next_num)
+
+    if len(num_deque) == 0:
+        break
+
+# print(clr_list)
+print(clr_list[k-1])
+
+
     
 
  
