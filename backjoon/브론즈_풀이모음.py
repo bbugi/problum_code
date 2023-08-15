@@ -162,5 +162,15 @@
 #     print(i)
 
 
+# ===== 15964 (브5) 이상한 기호 ==================
+
+# a, b = map(int, input().split())
+# print((a+b)*(a-b))
 
 
+# ===== 15680 (브5) 연세대학교 ==================
+n = int(input())
+if n == 0 :
+    print('YONSEI')
+elif n == 1 :
+    print('Leading the Way to the Future')
